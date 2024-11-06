@@ -13,7 +13,7 @@ ___INFO___
   "id": "cvt_temp_public_id",
   "version": 1,
   "securityGroups": [],
-  "displayName": "User data extraction",
+  "displayName": "User data form extraction",
   "categories": ["ANALYTICS", "CONVERSIONS", "ADVERTISING"],
   "brand": {
     "id": "taste-as",
