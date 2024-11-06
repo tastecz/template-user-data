@@ -1,0 +1,5 @@
+homepage: "https://www.taste.cz"
+documentation: "https://www.taste.cz/gtm/template/user-data-properties"
+versions:
+  - sha: 620112825438ba96dcda24db6daf41962118d2e1
+    changeNotes: Initial release.
