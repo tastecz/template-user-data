@@ -181,13 +181,27 @@ ___TEMPLATE_PARAMETERS___
         "groupStyle": "NO_ZIPPY",
         "subParams": [
           {
-            "type": "CHECKBOX",
-            "name": "checkboxReplaceValues",
-            "checkboxText": "If any new value to save, replace whole object",
+            "type": "RADIO",
+            "name": "replaceValues",
+            "displayName": "",
+            "radioItems": [
+              {
+                "value": "replace",
+                "displayValue": "If a new value is to be stored, the whole object is replaced."
+              },
+              {
+                "value": "merge",
+                "displayValue": "Replace only the new values, keep the others unchanged."
+              },
+              {
+                "value": "keep",
+                "displayValue": "If the object already exists, do not save anything new."
+              }
+            ],
             "simpleValueType": true
           }
         ],
-        "help": "If checked, whole user data object will be replaced with new one.\u003cbr\u003e\u003cbr\u003e  If unchecked, only user parameters with new values will be updated.\u003cbr\u003e\u003cbr\u003e  \u003cb\u003eDoes not apply to dataLayer event.\u003c/b\u003e"
+        "help": "Select how to handle new values found in the form."
       }
     ]
   }
@@ -215,16 +229,16 @@ const checkboxSessionStorage = data.checkboxSessionStorage;
 const checkboxCookie = data.checkboxCookie;
 const cookieDuration = makeInteger(data.cookieDuration);
 const checkboxDataLayer = data.checkboxDataLayer;
-const replaceValues = data.checkboxReplaceValues;
+const replaceValues = data.replaceValues;
 const defaultName = 'user_data';
 
 // Local Storage function
 const createLocalStorage = (ud) => {
     // Replace whole object
-    if (replaceValues) {
+    if (replaceValues === 'replace') {
         localStorage.setItem(defaultName, ud);
     // Merge old and new data
-    } else {
+    } else if (replaceValues === 'merge') {
         let oldObject = localStorage.getItem(defaultName);
         if (oldObject) {
             oldObject = JSON.parse(oldObject);
@@ -242,10 +256,10 @@ const createLocalStorage = (ud) => {
 // Session Storage function
 const createSessionStorage = (_ta, ud) => {
     // Replace whole object
-    if (replaceValues) {
+    if (replaceValues === 'replace') {
         _ta('session_storage', 'set', defaultName, ud);
     // Merge old and new data
-    } else {
+    } else if (replaceValues === 'merge') {
         let oldObject = _ta('session_storage', 'get', defaultName);
         if (oldObject) {
             oldObject = JSON.parse(oldObject);
@@ -267,10 +281,10 @@ const createCookie = (ud) => {
         'max-age': 60 * 60 * 24 * cookieDuration
     };
     // Replace whole object
-    if (replaceValues) {
+    if (replaceValues === 'replace') {
         setCookie(defaultName, ud, cookieOptions);
     // Merge old and new data
-    } else {
+    } else if (replaceValues === 'merge') {
         let oldObject = getCookie(defaultName);
         if (oldObject && oldObject.length !== 0) {
             oldObject = JSON.parse(oldObject[0]);
