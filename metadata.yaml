@@ -1,5 +1,7 @@
 homepage: "https://www.taste.cz"
 documentation: "https://www.taste.cz/gtm/template/user-data-properties"
 versions:
+  - sha: de763dcb3d52f5a133cedca29ac8a216aa8a9abd
+    changeNotes: Changed functionality of replacing values – added third option not to change anything if any object already saved.
   - sha: 620112825438ba96dcda24db6daf41962118d2e1
     changeNotes: Initial release.
