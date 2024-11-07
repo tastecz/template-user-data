@@ -119,7 +119,7 @@ ___TEMPLATE_PARAMETERS___
                 "type": "NON_EMPTY"
               }
             ],
-            "newRowButtonText": "Add another user parameter"
+            "newRowButtonText": "Add user parameter"
           }
         ]
       }
