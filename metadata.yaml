@@ -1,6 +1,8 @@
 homepage: "https://www.taste.cz"
 documentation: "https://taste.cz/gtm-template-user-data-properties"
 versions:
+  - sha: 6413662ffec5c9a7e081b72c4e3ce6ab964d1f3e
+    changeNotes: Readme updated.
   - sha: d6377439e463246597a68207b30b7e14cc711014
     changeNotes: Readme added.
   - sha: 7a9781ec89805eec430e765e68d2676b54f0601d
