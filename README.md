@@ -42,3 +42,7 @@ You can also choose how to behave if there are some user data already saved.
 ## Trigger
 Create a new trigger that would fire in the moment of clicking to a submit button of the form and set it as a trigger for the tag.
 
+## Next steps
+After the deployment of the template you can easily check if the user data is collected successfuly in the location you chose earlier (localStorage, cookie, ...).
+
+You can easily access this data with Custom Javascript variable and use it e.g. for Google Enhanced Conversions.
