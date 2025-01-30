@@ -1,5 +1,5 @@
 homepage: "https://www.taste.cz"
-documentation: "https://www.taste.cz/gtm/template/user-data-properties"
+documentation: "https://taste.cz/gtm-template-user-data-properties"
 versions:
   - sha: 9b0d2f8274bb417bb610c3c5854c1c4a87ff8963
     changeNotes: Add next row button text changed.
